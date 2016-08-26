@@ -1,5 +1,5 @@
 {
-    "name": "k_laravel_creator",
+    "name": "k_laravel_creator/k_laravel_creator",
     "description": "",
     "require": {
     	"php": ">=5.5.9",
