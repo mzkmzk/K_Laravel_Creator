@@ -1,0 +1,15 @@
+{
+    "name": "k_laravel_creator",
+    "description": "",
+    "require": {
+    	"php": ">=5.5.9",
+        "laravel/framework": "5.2.*"
+	},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mai ZhiKun",
+            "email": "mz_kk@sina.com"
+        }
+    ]
+}
