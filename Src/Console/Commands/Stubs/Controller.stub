@@ -1,0 +1,18 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Http\Request;
+
+use DummyRootNamespaceHttp\Requests;
+use DummyRootNamespaceHttp\Controllers\Base_Controller;
+use App\Models\Now_Entity_Model;
+
+class Now_Entity_Controller extends Base_Controller
+{
+
+     public function __construct(Request $request){
+        parent::__construct($request);
+        $this->model =new Now_Entity_Model();
+     }
+}
