@@ -49,8 +49,9 @@ class Creator_Service_Provider extends ServiceProvider
     public function registerCommands()
     {
         foreach ($this->commands as $key => $value) {
-            $this->app->singleton($value, function ($app) {
-                return new $key;
+            $this->app->singleton($value, function ($app) use ($key){
+                $class_name = "K_Laravel_Creator\\Console\\Commands\\" . $key;
+                return new $class_name($app['files']);
             });
 
             $this->commands($value);
