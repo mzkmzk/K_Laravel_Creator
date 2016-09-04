@@ -64,8 +64,6 @@ class Creator_Service_Provider extends ServiceProvider
      */
     public function provides()
     {
-        return [
-            'cache', 'cache.store', 'memcached.connector', 'command.cache.clear',
-        ];
+        return array_values($this->commands);
     }
 }
