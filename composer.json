@@ -6,6 +6,11 @@
         "laravel/framework": "5.2.*"
 	},
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "K_Laravel_Creator\\": "Src/"
+        }
+    },
     "authors": [
         {
             "name": "Mai ZhiKun",
