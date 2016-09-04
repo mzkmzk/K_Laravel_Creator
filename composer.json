@@ -16,11 +16,5 @@
             "name": "Mai ZhiKun",
             "email": "mz_kk@sina.com"
         }
-    ],
-    "repositories": [
-       {
-         "type": "git",
-         "url": "git@github.com:mzkmzk/K_Laravel_Creator.git"
-       }
-    ],
+    ]
 }
