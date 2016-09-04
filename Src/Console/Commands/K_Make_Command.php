@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace K_Laravel_Creator\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\AppNamespaceDetectorTrait;
