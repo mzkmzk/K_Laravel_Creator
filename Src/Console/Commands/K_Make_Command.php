@@ -4,6 +4,7 @@ namespace K_Laravel_Creator\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\AppNamespaceDetectorTrait;
+use Illuminate\Support\Facades\Config;
 
 class K_Make_Command extends Command
 {
@@ -13,16 +14,10 @@ class K_Make_Command extends Command
 
     protected $description = 'Make a series file';
 
-
-    public static $entities = [
-        "User",
-        "Activity",
-        "Media",
-    ];
-
     public function fire()
     {
-        foreach(self::$entities as $key=>$value){
+        $entities = Config::get('creator.entities');
+        foreach($entities as $key=>$value){
             $this->call('make:k_controller',['name' => $value]);
             $this->call('make:k_model',['name' => $value]);
             $this->call('make:k_migration',['name' => $value]);
