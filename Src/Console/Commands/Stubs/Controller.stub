@@ -5,7 +5,7 @@ namespace DummyNamespace;
 use Illuminate\Http\Request;
 
 use DummyRootNamespaceHttp\Requests;
-use DummyRootNamespaceHttp\Controllers\Base_Controller;
+use K_Laravel_Creator\Http\Controllers\Base_Controller;
 use App\Models\Now_Entity_Model;
 
 class Now_Entity_Controller extends Base_Controller

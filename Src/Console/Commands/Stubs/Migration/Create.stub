@@ -8,7 +8,7 @@ class Dummy_Class extends Migration
 
     public function up()
     {
-        Schema::create('Dummy_Table', function (Blueprint $table) {
+        Schema::dummy_method('Dummy_Table', function (Blueprint $table) {
             dummy_attribute
         });
     }

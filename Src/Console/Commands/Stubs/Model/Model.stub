@@ -3,6 +3,7 @@
 namespace DummyNamespace;
 
 use Illuminate\Database\Eloquent\Model;
+use K_Laravel_Creator\Models\Base_Model;
 
 class DummyClass extends Base_Model
 {

@@ -9,7 +9,7 @@ use K_Laravel_Creator\Console\Commands\K_Make_Factory;
 use K_Laravel_Creator\Console\Commands\K_Make_Migration;
 use K_Laravel_Creator\Console\Commands\K_Make_Model;
 use K_Laravel_Creator\Console\Commands\K_Make_Seeder;
-
+use Illuminate\Routing\Router;
 
 class Creator_Service_Provider extends ServiceProvider
 {
@@ -29,6 +29,34 @@ class Creator_Service_Provider extends ServiceProvider
         'K_Make_Seeder' => 'command.seeder.k_creator',
 
     ];
+
+    protected $namespace = 'App\Http\Controllers';
+
+    public function boot(Router $router)
+    {
+        //
+
+        parent::boot($router);
+    }
+
+
+    public function map(Router $router)
+    {
+        $this->mapWebRoutes($router);
+
+        //
+    }
+
+    protected function mapWebRoutes(Router $router)
+    {
+        $router->group([
+            'namespace' => $this->namespace, 'middleware' => 'web',
+        ], function ($router) {
+            $dir = (dirname(__FILE__));
+            errorlog($dir);
+            require $dir.'Http/routes.php';
+        });
+    }
 
     /**
      * Register the service provider.

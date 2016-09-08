@@ -48,6 +48,11 @@ class K_Make_Factory extends GeneratorCommand
         if (!$this->files->exists($path)) {
             $this->makeDirectory($path);
             $this->files->put($path, $this->buildClass($name));
+            /*file_put_contents(
+                $path,
+                file_get_contents(__DIR__.'/Stubs/Factory/Factory.stub'),
+                FILE_APPEND
+            );*/
         }
 
         file_put_contents(
