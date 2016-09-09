@@ -12,8 +12,6 @@ class Creator_Route_Service_Provider extends ServiceProvider
 
     public function boot(Router $router)
     {
-        //
-
         parent::boot($router);
     }
 
@@ -21,8 +19,6 @@ class Creator_Route_Service_Provider extends ServiceProvider
     public function map(Router $router)
     {
         $this->mapWebRoutes($router);
-
-        //
     }
 
     protected function mapWebRoutes(Router $router)
@@ -30,9 +26,7 @@ class Creator_Route_Service_Provider extends ServiceProvider
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
-            $dir = (dirname(__FILE__));
-            error_log($dir);
-            require $dir.'/Http/routes.php';
+            require dirname(__FILE__).'/Http/routes.php';
         });
     }
 
