@@ -84,12 +84,14 @@ class K_Make_Controller extends GeneratorCommand
     {
         $namespace = $this->getNamespace($name);
         $default_replace = str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
+        //return str_replace("Now_Entity", "Creator_" . $this->argument("name"), $default_replace);
         return str_replace("Now_Entity", $this->argument("name"), $default_replace);
     }
 
     public function fire()
     {
-        $name = $this->parseName($this->getNameInput()."_Controller");
+        //$name = $this->parseName("Creator_" . $this->getNameInput()."_Controller");
+        $name = $this->parseName( $this->getNameInput()."_Controller");
 
         $path = $this->getPath($name);
 

@@ -40,6 +40,7 @@ class K_Make_Model extends GeneratorCommand
      */
     public function fire()
     {
+        //$name = $this->parseName("Creator_" . $this->getNameInput()."_Model");
         $name = $this->parseName($this->getNameInput()."_Model");
 
         $path = $this->getPath($name);

@@ -68,6 +68,7 @@ class K_Make_Seeder extends GeneratorCommand
     }
 
     protected function create_seeder(){
+        //return "factory(App\\Models\\Creator_".ucwords($this->getNameInput())."_Model::class, 1)->create();\n\n//";
         return "factory(App\\Models\\".ucwords($this->getNameInput())."_Model::class, 1)->create();\n\n//";
     }
 

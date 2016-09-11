@@ -45,7 +45,8 @@ class K_Make_Migration extends GeneratorCommand
         $date = date("Y_m_d");
         $random = random_int(100000,999999);
 
-        $raw_name =$date."_" .$random ."_Create_". $this->getNameInput();
+        //$raw_name =$date."_" .$random ."_Create_". $this->getNameInput();
+        $raw_name =$date."_" .$random ."_". $this->getNameInput();
         $name = $this->parseName($raw_name);
 
         $path =  $this->laravel->basePath()."/database/migrations/".$raw_name.".php";
@@ -97,12 +98,17 @@ class K_Make_Migration extends GeneratorCommand
     protected function buildClass($name)
     {
         $build_class = parent::buildClass($name);
-        $build_class = str_replace("Dummy_Class", "Create".$this->argument("name"), $build_class);
+        //$build_class = str_replace("Dummy_Class", "Create".$this->argument("name"), $build_class);
+        $build_class = str_replace("Dummy_Class", $this->saveChart($this->argument("name")) , $build_class);
         $build_class = str_replace("dummy_method", $this->dummyMethod($this->argument("name")), $build_class);
         $build_class = str_replace("Dummy_Table", $this->argument("name"), $build_class);
         $entity = "App\\Entities\\" . $this->argument("name") . "_Entity";
         $build_class = str_replace("dummy_attribute",$this->build_attribute($entity),$build_class);
         return $build_class;
+    }
+
+    private function saveChart($name) {
+        return preg_replace('/[^a-zA-Z]/','',$name);
     }
 
     private function dummyMethod($table_name) {

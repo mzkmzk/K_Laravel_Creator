@@ -41,6 +41,7 @@ class K_Make_Factory extends GeneratorCommand
      */
     public function fire()
     {
+        //$name = $this->parseName("Creator_" . $this->getNameInput());
         $name = $this->parseName($this->getNameInput());
 
         $path =  $this->laravel->basePath()."/database/factories/ModelFactory.php";
