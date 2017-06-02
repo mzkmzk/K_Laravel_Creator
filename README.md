@@ -137,7 +137,7 @@ return [
 
 ### delete
 
-`http://inner.journey.404mzk.com/v1/Creator_User_Controller/delete?id=161&wechat_id=1`
+`http://inner.journey.404mzk.com/v1/Creator_User_Controller/delete?id=161`
 
 ```JSON
 {
