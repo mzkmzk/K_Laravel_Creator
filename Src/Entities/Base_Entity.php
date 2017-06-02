@@ -25,7 +25,7 @@ class Base_Entity{
      * @param $length 字段长度
      * @return array
      */
-    public static function  set_attribute($front , $type , $option = [] ,$length = 255){
+    public static function  set_attribute($front , $type = 'string', $option = [] ,$length = 255){
         return $attribute = [
             "front" => $front,
             "type" => $type,

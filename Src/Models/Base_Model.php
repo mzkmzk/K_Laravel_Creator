@@ -10,7 +10,8 @@ class Base_Model extends Model implements Jsonable{
 
     use SoftDeletes;
 
-
+    public $superior =null;
+    protected $guarded = [];
 
 }
 
