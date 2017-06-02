@@ -2,13 +2,9 @@
 
 Hope this can help you quickly build API
 
-* **loadtime:** Report of the dom related time and ATF
-* **network:** Report the resource requests timeout
-* **error:** Record the request and error code
-
 ## Instructions
 
-Close it on the web, send a statistical package
+On the basis of Laravel5.2, provide convenient database and the production of API interface
 
 ## Install
 
