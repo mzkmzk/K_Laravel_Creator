@@ -91,6 +91,16 @@ return [
 }
 ```
 
+### update
+
+`http://inner.journey.404mzk.com/v1/Creator_User_Controller/update?id=161&wechat_id=1`
+
+```JSON
+{
+  "result": true
+}
+```
+
 #### query
 
 `http://url/v1/Creator_User_Controller/query?id=161`
@@ -125,15 +135,6 @@ return [
 }
 ```
 
-### update
-
-`http://inner.journey.404mzk.com/v1/Creator_User_Controller/update?id=161&wechat_id=1`
-
-```JSON
-{
-  "result": true
-}
-```
 
 ### delete
 
