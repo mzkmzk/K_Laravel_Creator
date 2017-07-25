@@ -6,9 +6,18 @@ Hope this can help you quickly build API
 
 On the basis of Laravel5.2, provide convenient database and the production of API interface
 
+
+
 ## Install
 
-`composer install 404_k/k_laravel_creator`
+### install laravel
+
+git clone git@github.com:laravel/laravel.git
+
+
+
+
+`composer require 404_k/k_laravel_creator`
 
 ## Use
 
