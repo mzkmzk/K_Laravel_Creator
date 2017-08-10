@@ -6,28 +6,31 @@ Hope this can help you quickly build API
 
 On the basis of Laravel5.2, provide convenient database and the production of API interface
 
-git clone git@github.com:laravel/laravel.git
+## Install
+
+git clone git@github.com:mzkmzk/K_Laravel_Creator_Demo.git
 
 composer install 
 
-chmod -R 777 storage/framework/ storage/logs
+chmod -R 777 storage/framework/ storage/logs bootstrap/cache
 
-cp .env.example .env
+cp .env.example .env //configuration .env 
 
 php artisan key:generate
 
-## Install
+php artisan make:k_command
 
-
-`composer require 404_k/k_laravel_creator`
+rm -rf .git
 
 ## Use
 
 ### Set Entity
 
 ```php
+//in app/Entities/Creator_User_Entity.php
 use K_Laravel_Creator\Entities\Base_Entity;
 
+<php?
 
 class Creator_User_Entity extends Base_Entity{
 
@@ -38,8 +41,12 @@ class Creator_User_Entity extends Base_Entity{
     // if has on to many entity 
     public static $has_many = ['Creator_Activity'];
 
+    /**
+     * set_attribute 参数
+     */
     public static function get_attribute(){
         $attribute = array();
+        //wechat_id 为属性名 微信ID为字段说明 string 为该字段的类型, 可选类型有 "id" , "string" , "date_time" "url","int"
         $attribute['wechat_id'] = parent::set_attribute("微信ID","string");
         $attribute['login_sum'] = parent::set_attribute("登陆次数","int");
         $attribute['visit_password'] = parent::set_attribute("访问密码","string");
